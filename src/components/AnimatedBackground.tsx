@@ -21,7 +21,7 @@ export const AnimatedBackground = () => {
           ],
         }}
         transition={{
-          duration: 15,
+          duration: 8,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "linear",
@@ -57,7 +57,7 @@ export const AnimatedBackground = () => {
         style={{
           background: 'radial-gradient(circle, rgba(255,51,102,0.15) 0%, rgba(255,51,102,0) 70%)',
           top: '10%',
-          left: '20%',
+          left: '30%',
         }}
         animate={{
           y: [0, -40, 0],
