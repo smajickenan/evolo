@@ -33,7 +33,10 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hidden lg:flex items-center justify-center"
         >
-          <div className="relative">
+          <div className="relative w-full max-w-5xl mx-auto">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-8xl font-bold text-[#023157]/30 z-10">HOVER</span>
+            </div>
             <Compare
               firstImage="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
               secondImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
