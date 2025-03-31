@@ -21,7 +21,7 @@ export const AnimatedBackground = () => {
           ],
         }}
         transition={{
-          duration: 25,
+          duration: 15,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "linear",

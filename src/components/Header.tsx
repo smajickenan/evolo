@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
+interface HeaderProps {
+  scrollToPricing: () => void;
+  scrollToServices: () => void;
+  scrollToContact: () => void;
+}
+
+export function Header({ scrollToPricing, scrollToServices, scrollToContact }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -66,17 +72,28 @@ export const Header = () => {
             <Link
               to="/services"
               className="relative text-[#023157] text-xl font-semibold group"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToServices();
+              }}
             >
               <span className="relative z-10">Services</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link
-              to="/contact"
+            <button 
+              onClick={scrollToPricing}
+              className="relative text-[#023157] text-xl font-semibold group"
+            >
+              <span className="relative z-10">Pricing</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button 
+              onClick={scrollToContact}
               className="relative text-[#023157] text-xl font-semibold group"
             >
               <span className="relative z-10">Contact</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
-            </Link>
+            </button>
             <Link
               to="/contact"
               className="bg-[#023157] text-white px-8 py-2.5 rounded-full hover:bg-[#023157]/90 transition-all duration-300 text-l font-semibold hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
@@ -139,13 +156,15 @@ export const Header = () => {
                 >
                   Services
                 </Link>
-                <Link
-                  to="/contact"
-                  className="block px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
+                <button
+                  onClick={() => {
+                    scrollToContact();
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full text-left px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
                 >
                   Contact
-                </Link>
+                </button>
                 <Link
                   to="/contact"
                   className="block px-3 py-2 bg-[#023157] text-white rounded-full hover:bg-[#023157]/90 transition-all duration-300 text-center text-xl font-semibold hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
@@ -160,4 +179,4 @@ export const Header = () => {
       </div>
     </motion.header>
   );
-};
+}

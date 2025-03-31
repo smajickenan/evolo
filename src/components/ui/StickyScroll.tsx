@@ -42,7 +42,7 @@ export const StickyScroll = ({
   return (
     <motion.div
      
-      className="relative flex h-[80vh] w-screen justify-center space-x-10 overflow-y-auto rounded-2xl"
+      className="relative flex h-[58vh] bg-[#023157] w-screen justify-center space-x-10 overflow-y-auto "
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -50,7 +50,7 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div 
               key={item.title + index} 
-              className="min-h-[80vh] flex flex-col justify-center"
+              className="min-h-[70vh] flex flex-col justify-center"
             >
               <motion.h2
                 initial={{
@@ -80,7 +80,7 @@ export const StickyScroll = ({
       </div>
       <div
         className={cn(
-          'sticky top-10 hidden h-[500px] w-[800px] overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm shadow-2xl lg:block',
+          'sticky top-10 hidden h-[50vh] w-[50vw] overflow-hidden rounded-2xl lg:block',
           contentClassName,
         )}
       >
