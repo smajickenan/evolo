@@ -23,7 +23,7 @@ const MeteorsSection = () => {
   };
 
   return (
-    <div className="h-[70vh] flex items-center justify-center bg-[#edf0f2]">
+    <div className="h-[70vh] flex items-center justify-center bg-white/80">
       <div className="relative w-full max-w-5xl mx-auto px-4">
         <div className="absolute inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
         <div className="relative flex h-full overflow-hidden rounded-2xl border border-gray-800 bg-[#023157] shadow-xl">
