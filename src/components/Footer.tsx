@@ -5,7 +5,13 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <span className="text-2xl font-semibold text-white">Evolo</span>
+            <div className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="Evolo Logo" 
+                className="h-[90px] w-auto"
+              />
+            </div>
             <p className="mt-2 text-sm text-white/60">
               Transform your business with a website that stands out.
             </p>

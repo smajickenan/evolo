@@ -50,7 +50,12 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact }: H
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/logo.png" 
+              alt="Evolo Logo" 
+              className="h-16 w-16"
+            />
             <span className="text-3xl font-extrabold text-[#023157] tracking-tight hover:text-[#023157]/90 transition-all duration-300">
               Evolo
             </span>

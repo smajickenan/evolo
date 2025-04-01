@@ -27,8 +27,8 @@ export const AnimatedBackground = () => {
           ease: "linear",
         }}
         style={{
-          maskImage: 'linear-gradient(155deg, white 49%, transparent 50%)',
-          WebkitMaskImage: 'linear-gradient(155deg, white 49%, transparent 50%)',
+          maskImage: 'linear-gradient(165deg, white 49%, transparent 50%)',
+          WebkitMaskImage: 'linear-gradient(165deg, white 49%, transparent 50%)',
         }}
       />
 
@@ -36,9 +36,9 @@ export const AnimatedBackground = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(155deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)',
-          maskImage: 'linear-gradient(155deg, white 49%, transparent 50%)',
-          WebkitMaskImage: 'linear-gradient(155deg, white 49%, transparent 50%)',
+          background: 'linear-gradient(165deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)',
+          maskImage: 'linear-gradient(165deg, white 49%, transparent 50%)',
+          WebkitMaskImage: 'linear-gradient(165deg, white 49%, transparent 50%)',
         }}
       />
 
@@ -46,8 +46,8 @@ export const AnimatedBackground = () => {
       <div 
         className="absolute inset-0 bg-gradient-to-b from-[#fff5f5] to-[#fff0e6]"
         style={{
-          maskImage: 'linear-gradient(155deg, transparent 49%, white 50%)',
-          WebkitMaskImage: 'linear-gradient(155deg, transparent 49%, white 50%)',
+          maskImage: 'linear-gradient(165deg, transparent 49%, white 0%)',
+          WebkitMaskImage: 'linear-gradient(165deg, transparent 49%, white 0%)',
         }}
       />
 
@@ -64,9 +64,9 @@ export const AnimatedBackground = () => {
           scale: [1, 1.2, 1],
         }}
         transition={{
-          duration: 15,
+          duration: 7,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: "loop",
           ease: "easeInOut",
         }}
       />
@@ -79,12 +79,12 @@ export const AnimatedBackground = () => {
         }}
         animate={{
           y: [0, 30, 0],
-          scale: [1, 1.3, 1],
+          scale: [2, 3, 5],
         }}
         transition={{
-          duration: 12,
+          duration: 7,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: "loop",
           ease: "easeInOut",
           delay: 1,
         }}
@@ -98,14 +98,14 @@ export const AnimatedBackground = () => {
         }}
         animate={{
           y: [0, -25, 0],
-          scale: [1, 1.15, 1],
+          scale: [1.5, 1.5, 2],
         }}
         transition={{
-          duration: 10,
+          duration: 12,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: "loop",
           ease: "easeInOut",
-          delay: 2,
+          delay: 1,
         }}
       />
       <motion.div
@@ -122,7 +122,7 @@ export const AnimatedBackground = () => {
         transition={{
           duration: 13,
           repeat: Infinity,
-          repeatType: "reverse",
+          repeatType: "loop",
           ease: "easeInOut",
           delay: 3,
         }}
