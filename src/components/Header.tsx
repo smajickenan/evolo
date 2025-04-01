@@ -18,7 +18,10 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact }: H
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollY) {
+      if (currentScrollY < 20) {
+        // At the top of the page
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
         // Scrolling down
         setIsVisible(false);
       } else {
