@@ -202,15 +202,14 @@ export function App() {
                         <FlipWords
                           words={[
                             "modern",
-                            "better",
-                            "cute",
-                            "beautiful",
                             "clean",
+                            "Professional",
+                            "Functional",
                           ]}
                           duration={2000}
                           className="text-[#6fa8d6]"
                         />{" "}
-                        websites with EVOLO
+                        websites with Evolo
                       </h2>
                     </div>
                   </div>

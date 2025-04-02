@@ -13,18 +13,16 @@ export const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col justify-center space-y-8"
         >
-          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#023157] to-[#023157]/80">
+          <h1 className="text-5xl md:text-6xl font-bold bg-clip-text  bg-gradient-to-r from-[#023157] to-[#023157]/80">
           Transform Your Business with a Website That Stands Out.
           </h1>
-          <p className="text-xl md:text-2xl text-[#023157]/70">
+          <p className="text-xl md:text-2xl ">
           At Evolo, we fully revamp your company's online footprint, creating modern, responsive, SEO-optimized websites that attract more customers.  </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-[#023157]/90 hover:bg-[#023157] text-white rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5">
-              Get Started
+            <button className="px-8 py-3 bg-[#023157] hover:bg-[#023157] text-white rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5">
+             Learn More
             </button>
-            <button className="px-8 py-3 border-2 border-[#023157]/30 hover:border-[#023157]/50 text-[#023157]/90 hover:text-[#023157] rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg">
-              Learn More
-            </button>
+         
           </div>
         </motion.div>
         <motion.div
