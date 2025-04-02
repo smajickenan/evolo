@@ -23,25 +23,25 @@ const MeteorsSection = () => {
   };
 
   return (
-    <div className="h-[70vh] flex items-center justify-center bg-white/80">
-      <div className="relative w-full max-w-5xl mx-auto px-4">
+    <div className="min-h-[80vh] sm:h-[70vh] flex items-center justify-center bg-white/80 py-8 sm:py-0">
+      <div className="relative w-full max-w-4xl mx-auto px-4">
         <div className="absolute inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
-        <div className="relative flex h-full overflow-hidden rounded-2xl border border-gray-800 bg-[#023157] shadow-xl">
+        <div className="relative flex flex-col lg:flex-row h-full overflow-hidden rounded-2xl border border-gray-800 bg-[#023157] shadow-xl">
           {/* Left Column - Contact Info */}
-          <div className="relative z-50 w-1/2 p-8 flex flex-col justify-center">
-            <h1 className="text-3xl font-bold text-white mb-8">Contact Us</h1>
+          <div className="relative z-50 w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 lg:mb-8">Contact Us</h1>
             
-            <div className="space-y-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               <div>
-                <div className="text-white/80 text-lg mb-3">Email</div>
-                <a href="mailto:eli.jerome2@gmail.com" className="text-[#6fa8d6] hover:text-white transition-colors text-xl">
+                <div className="text-white/80 text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:mb-3">Email</div>
+                <a href="mailto:eli.jerome2@gmail.com" className="text-[#6fa8d6] hover:text-white transition-colors text-base sm:text-lg lg:text-xl">
                   eli.jerome2@gmail.com
                 </a>
               </div>
 
               <div>
-                <div className="text-white/80 text-lg mb-3">Phone</div>
-                <a href="tel:561-504-0590" className="text-[#6fa8d6] hover:text-white transition-colors text-xl">
+                <div className="text-white/80 text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:mb-3">Phone</div>
+                <a href="tel:561-504-0590" className="text-[#6fa8d6] hover:text-white transition-colors text-base sm:text-lg lg:text-xl">
                   561-504-0590
                 </a>
               </div>
@@ -49,10 +49,10 @@ const MeteorsSection = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="relative z-50 w-1/2 p-8 bg-white/5 backdrop-blur-sm">
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="relative z-50 w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
                   Name
                 </label>
                 <input
@@ -62,13 +62,13 @@ const MeteorsSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent text-sm sm:text-base"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
                   Email
                 </label>
                 <input
@@ -78,13 +78,13 @@ const MeteorsSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent text-sm sm:text-base"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
                   Phone
                 </label>
                 <input
@@ -94,13 +94,13 @@ const MeteorsSection = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent text-sm sm:text-base"
                   placeholder="Your phone number"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
                   Message
                 </label>
                 <textarea
@@ -109,15 +109,15 @@ const MeteorsSection = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent"
+                  rows={3}
+                  className="w-full px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent text-sm sm:text-base"
                   placeholder="Your message"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#6fa8d6] text-white px-6 py-3 rounded-lg hover:bg-[#6fa8d6]/90 transition-all duration-300 font-semibold hover:shadow-lg hover:shadow-[#6fa8d6]/20 hover:-translate-y-0.5"
+                className="w-full px-3 sm:px-4 py-2 bg-[#6fa8d6] text-[#023157] font-semibold rounded-lg hover:bg-[#5b9ccc] transition-colors duration-300 text-sm sm:text-base"
               >
                 Send Message
               </button>
@@ -125,7 +125,7 @@ const MeteorsSection = () => {
           </div>
 
           {/* Meteor effect */}
-          <Meteors number={50} />
+          <Meteors number={30} />
         </div>
       </div>
     </div>
