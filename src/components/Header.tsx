@@ -44,7 +44,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact }: H
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/60 backdrop-blur-xs shadow-md'
+          ? 'bg-white/60 backdrop-blur-md shadow-md'
           : 'bg-white/30 backdrop-blur-sm'
       }`}
     >

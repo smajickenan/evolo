@@ -4,11 +4,11 @@ import { AnimatePresence, motion, LayoutGroup } from "motion/react";
 import { cn } from "../../lib/utils";
 
 const letterColors = [
+  "#5e7bab", 
   "#6fa8d6", 
-  "#ff3366", 
-  "#9933ff", 
+  "#d2d2d2", 
   "#ffffff", 
-  "#ffcc33", 
+  "#a8ed8e", 
   "#ff9933", 
   
 ];
