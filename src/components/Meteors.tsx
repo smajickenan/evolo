@@ -33,14 +33,14 @@ const MeteorsSection = () => {
             
             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               <div>
-                <div className="text-white/80 text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:mb-3">Email</div>
+                <div className="text-white/80 text-sm sm:text-base lg:text-xl mb-1 sm:mb-2 lg:mb-3">Email</div>
                 <a href="mailto:eli.jerome2@gmail.com" className="text-[#6fa8d6] hover:text-white transition-colors text-base sm:text-lg lg:text-xl">
                   eli.jerome2@gmail.com
                 </a>
               </div>
 
               <div>
-                <div className="text-white/80 text-sm sm:text-base lg:text-lg mb-1 sm:mb-2 lg:mb-3">Phone</div>
+                <div className="text-white/80 text-sm sm:text-base lg:text-xl mb-1 sm:mb-2 lg:mb-3">Phone</div>
                 <a href="tel:561-504-0590" className="text-[#6fa8d6] hover:text-white transition-colors text-base sm:text-lg lg:text-xl">
                   561-504-0590
                 </a>
@@ -49,10 +49,10 @@ const MeteorsSection = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="relative z-50 w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm">
+          <div className="relative z-10 w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-white/5 backdrop-blur-sm">
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
-                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="name" className="block lg:text-xl sm:text-sm font-medium text-white/80 mb-1">
                   Name
                 </label>
                 <input
@@ -68,7 +68,7 @@ const MeteorsSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="email" className="block lg:text-xl sm:text-sm font-medium text-white/80 mb-1">
                   Email
                 </label>
                 <input
@@ -84,7 +84,7 @@ const MeteorsSection = () => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="phone" className="block lg:text-xl sm:text-sm font-medium text-white/80 mb-1">
                   Phone
                 </label>
                 <input
@@ -100,7 +100,7 @@ const MeteorsSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-white/80 mb-1">
+                <label htmlFor="message" className="block lg:text-xl sm:text-sm font-medium text-white/80 mb-1">
                   Message
                 </label>
                 <textarea
@@ -117,7 +117,7 @@ const MeteorsSection = () => {
 
               <button
                 type="submit"
-                className="w-full px-3 sm:px-4 py-2 bg-[#6fa8d6] text-[#023157] font-semibold rounded-lg hover:bg-[#5b9ccc] transition-colors duration-300 text-sm sm:text-base"
+                className="w-full px-3 sm:px-4 py-2 bg-white text-[#023157] font-semibold rounded-lg hover:bg-[#5b9ccc] transition-colors duration-300 text-sm sm:text-base"
               >
                 Send Message
               </button>

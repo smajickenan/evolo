@@ -8,6 +8,10 @@ export default {
       fontFamily: {
         lexend: ['Lexend', 'sans-serif'],
       },
+      fontFamily: {
+        libre: ['"Libre Caslon Display"', 'sans-serif'],
+        popins: ['"Poppins"', 'sans-serif']
+      },
       animation: {
         "meteor-effect": "meteor 60s linear infinite",
       },

@@ -14,7 +14,7 @@ export const ValueProposition = () => {
     title: 'Face-to-Face Interaction',
     description: 'Personal meetings to ensure your website matches your vision perfectly.'
   }];
-  return <section className="py-16 bg-white/80">
+  return <section className="py-16  bg-[#023157]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {values.map((value, index) => <div key={index} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
