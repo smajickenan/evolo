@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '../../lib/utils'
 interface CompareProps {
@@ -7,7 +7,8 @@ interface CompareProps {
   firstImageClassName?: string
   secondImageClassname?: string
   className?: string
-  slideMode?: 'hover' | 'drag'
+  slideMode?: 'hover' | 'drag' | 'auto'
+  autoSpeed?: number
 }
 export const Compare = ({
   firstImage,
@@ -16,22 +17,56 @@ export const Compare = ({
   secondImageClassname,
   className,
   slideMode = 'hover',
+  autoSpeed = 3000,
 }: CompareProps) => {
-  const [sliderPosition, setSliderPosition] = useState(50)
+  const [sliderPosition, setSliderPosition] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number | null>(null)
+  
   const handleMouseMove = (event: React.MouseEvent) => {
-    if (containerRef.current) {
+    if (containerRef.current && slideMode === 'hover') {
       const rect = containerRef.current.getBoundingClientRect()
       const x = Math.max(0, Math.min(event.clientX - rect.left, rect.width))
       const percentage = (x / rect.width) * 100
       setSliderPosition(percentage)
     }
   }
+  
+  // Auto animation function
+  const animateSlider = () => {
+    setSliderPosition((prevPosition) => {
+      if (prevPosition >= 100) {
+        return 0
+      }
+      return prevPosition + 0.5
+    })
+    
+    animationRef.current = requestAnimationFrame(animateSlider)
+  }
+  
+  useEffect(() => {
+    // Start auto animation if slideMode is 'auto'
+    if (slideMode === 'auto') {
+      // Reset position to start
+      setSliderPosition(0)
+      
+      // Start the animation
+      animationRef.current = requestAnimationFrame(animateSlider)
+    }
+    
+    // Cleanup function
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [slideMode])
+  
   return (
     <div
       ref={containerRef}
       className={cn('relative overflow-hidden', className)}
-      onMouseMove={slideMode === 'hover' ? handleMouseMove : undefined}
+      onMouseMove={handleMouseMove}
     >
       <div className="relative h-full w-full">
         <div className="absolute inset-0">

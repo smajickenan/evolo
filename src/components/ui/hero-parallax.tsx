@@ -63,7 +63,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[290vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[250vh] sm:h-[290vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -110,10 +110,10 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-extrabold font-libre text-[#08183e]">
+      <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold font-libre text-[#08183e]">
         The Ultimate <br /> development studio
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 font-popins text-[#08183e]">
+      <p className="max-w-2xl text-lg sm:text-base md:text-xl mt-8 font-popins text-[#08183e] mx-auto text-center sm:text-left">
         We build beautiful products with the latest technologies and frameworks.
         We are a team of passionate developers and designers that love to build
         amazing products.

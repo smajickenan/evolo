@@ -2,15 +2,19 @@ import React, { useState } from 'react'
 import { PlusIcon, MinusIcon } from 'lucide-react'
 interface AccordionItemProps {
   question: string
-  answer: string
+  answer: string | JSX.Element
 }
+
 const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggleAccordion = () => {
     setIsOpen(!isOpen)
   }
+
   return (
     <div className="border-b border-gray-700/50 ">
+      
+
       <button
         className="flex justify-between items-center w-full py-5 text-left"
         onClick={toggleAccordion}
@@ -27,7 +31,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer }) => {
       </button>
       {isOpen && (
         <div className="pb-5 text-gray-400">
-          <p>{answer}</p>
+          {answer}
         </div>
       )}
     </div>

@@ -21,7 +21,7 @@ export const HeroSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="font-popins px-6 sm:px-8 py-2.5 sm:py-3 bg-[#08183e] hover:bg-[#023157] text-white rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5">
-              Learn More
+              Contact us
             </button>
           </div>
         </motion.div>

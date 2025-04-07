@@ -9,7 +9,7 @@ export default {
         lexend: ['Lexend', 'sans-serif'],
       },
       fontFamily: {
-        libre: ['"Libre Caslon Display"', 'sans-serif'],
+        libre: ['Lexend', 'sans-serif'],
         popins: ['"Poppins"', 'sans-serif']
       },
       animation: {

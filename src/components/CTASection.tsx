@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 const CTASection  = () => {
   return (
-    <section className="relative py-32 overflow-hidden flex justify-center">
-      <div className="w-[70vw] relative rounded-2xl overflow-hidden">
+    <section className="relative py-8 sm:py-16 md:py-24 lg:py-32 overflow-hidden flex justify-center min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh]">
+      <div className="w-[90vw] sm:w-[80vw] md:w-[75vw] lg:w-[70vw] relative rounded-2xl overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <motion.div
@@ -26,7 +26,7 @@ const CTASection  = () => {
           
           {/* Floating elements with vibrant colors */}
           <motion.div
-            className="absolute w-[300px] h-[300px] rounded-full"
+            className="absolute w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] rounded-full"
             style={{
               background: 'radial-gradient(circle, rgba(255,51,102,0.15) 0%, rgba(255,51,102,0) 70%)',
               top: '10%',
@@ -44,7 +44,7 @@ const CTASection  = () => {
             }}
           />
           <motion.div
-            className="absolute w-[200px] h-[200px] rounded-full"
+            className="absolute w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] rounded-full"
             style={{
               background: 'radial-gradient(circle, rgba(255,204,51,0.15) 0%, rgba(255,204,51,0) 70%)',
               top: '30%',
@@ -63,7 +63,7 @@ const CTASection  = () => {
             }}
           />
           <motion.div
-            className="absolute w-[250px] h-[250px] rounded-full"
+            className="absolute w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full"
             style={{
               background: 'radial-gradient(circle, rgba(153,51,255,0.1) 0%, rgba(153,51,255,0) 70%)',
               top: '20%',
@@ -83,14 +83,14 @@ const CTASection  = () => {
           />
         </div>
         
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a1530]/80 to-transparent z-10"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 lg:h-32 bg-gradient-to-t from-[#0a1530]/80 to-transparent z-10"></div>
         
-        <div className="relative z-20 p-8">
-          <div className="flex justify-center mb-4">
-            <div className="bg-white rounded-full p-3">
+        <div className="relative z-20 p-4 sm:p-6 md:p-8">
+          <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
+            <div className="bg-white rounded-full p-2 sm:p-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-[#0c1a39]"
+                className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-[#0c1a39]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -104,29 +104,29 @@ const CTASection  = () => {
               </svg>
             </div>
           </div>
-          <div className="flex items-center justify-center mb-2">
+          <div className="flex items-center justify-center mb-1 sm:mb-2">
             {[1, 2, 3, 4, 5].map((star) => (
               <svg
                 key={star}
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-yellow-400"
+                className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
               </svg>
             ))}
-            <span className="ml-2 text-white font-semibold text-xl">50+ clients reviewed</span>
+            <span className="ml-1 sm:ml-2 text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl">50+ clients reviewed</span>
           </div>
-          <p className="text-center text-white font-semibold text-xl mb-6">
+          <p className="text-center text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-5 lg:mb-6">
             "He assisted perfectly well in our project and delivered a great
             result."
           </p>
-          <h3 className="font-libre text-3xl md:text-4xl lg:text-7xl text-white font-extrabold text-xl text-center mb-4 max-w-5xl mx-auto leading-tight">
+          <h3 className="font-libre text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-7xl text-white font-extrabold text-center mb-2 sm:mb-3 md:mb-4 max-w-5xl mx-auto leading-tight">
             It's time to convert your website into a money-making business asset.
           </h3>
-          <div className="flex justify-center mt-8">
-            <button className="bg-white hover:bg-gray-100 text-[#08183e] font-extrabold py-3 px-6 border border-gray-200 rounded-xl transition-colors">
+          <div className="flex justify-center mt-4 sm:mt-6 md:mt-8">
+            <button className="bg-white hover:bg-gray-100 text-[#08183e] font-extrabold py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6 border border-gray-200 rounded-xl transition-colors text-sm sm:text-base">
               Get a Free Website Audit
             </button>
           </div>

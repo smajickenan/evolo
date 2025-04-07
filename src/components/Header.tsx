@@ -7,9 +7,10 @@ interface HeaderProps {
   scrollToServices: () => void;
   scrollToContact: () => void;
   scrollToPortfolio: () => void;
+  scrollToFAQ: () => void;
 }
 
-export function Header({ scrollToPricing, scrollToServices, scrollToContact, scrollToPortfolio }: HeaderProps) {
+export function Header({ scrollToPricing, scrollToServices, scrollToContact, scrollToPortfolio, scrollToFAQ }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -64,23 +65,17 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-12">
-            <Link
-              to="/"
-              className="relative text-[#0c1a39] text-xl font-semibold group"
-            >
-              <span className="font-popins relative z-10">Home</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
-            </Link>
+           
             <Link
               to="/about"
-              className="relative text-[#0c1a39] text-xl font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
             >
               <span className="font-popins relative z-10">About</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link
               to="/services"
-              className="relative text-[#0c1a39] text-xl font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
               onClick={(e) => {
                 e.preventDefault();
                 scrollToServices();
@@ -91,25 +86,33 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
             </Link>
             <button 
               onClick={scrollToPricing}
-              className="relative text-[#0c1a39] text-xl font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
             >
               <span className="font-popins relative z-10">Pricing</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
               onClick={scrollToPortfolio}
-              className="relative text-[#0c1a39] text-xl font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">Portfolio</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
+              onClick={scrollToFAQ}
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
+            >
+              <span className="font-popins relative z-10">FAQ</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
+            </button>
+            <button 
               onClick={scrollToContact}
-              className="relative text-[#0c1a39] text-xl font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
             >
               <span className="font-popins relative z-10">Contact</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
+            
             <Link
               to="/contact"
               className="font-popins bg-[#0c1a39] text-white px-8 py-2.5 rounded-full hover:bg-[#023157]/90 transition-all duration-300 text-l font-semibold hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
@@ -151,13 +154,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               className="md:hidden  "
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <Link
-                  to="/"
-                  className="font-popins block px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
+                
                 <Link
                   to="/about"
                   className="font-popins block px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"

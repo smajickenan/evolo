@@ -31,6 +31,7 @@ export function App() {
   const servicesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const portfolioRef = useRef<HTMLDivElement>(null);
+const faqRef = useRef<HTMLDivElement>(null)
 
   const scrollToPricing = () => {
     pricingRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -47,6 +48,9 @@ export function App() {
   const scrollToPortfolio = () => {
     portfolioRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  const scrollToFAQ = () => {
+    faqRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <Router>
@@ -58,6 +62,7 @@ export function App() {
             scrollToServices={scrollToServices} 
             scrollToContact={scrollToContact}
             scrollToPortfolio={scrollToPortfolio}
+            scrollToFAQ={scrollToFAQ}
           />
           <Routes>
             <Route
@@ -67,23 +72,38 @@ export function App() {
                   <HeroSection />
                  
                   <div className="py-14 bg-[#0c1a39]">
-                    <div className="max-w-4xl mx-auto text-center">
-                      <h2 className="font-libre text-5xl font-bold text-white">
+  <div className="max-w-4xl mx-auto text-center ">
+    {/* Desktop Version */}
+    <h2 className="hidden sm:block font-libre text-5xl font-bold text-white">
                         Build{" "}
                         <FlipWords
                           words={[
                             "modern",
                             "clean",
-                            "Professional",
-                            "Functional",
+                            "professional",
+                            "functional",
                           ]}
                           duration={2000}
                           className="text-[#6fa8d6]"
                         />{" "}
                         websites with Evolo
                       </h2>
-                    </div>
-                  </div>
+
+    {/* Mobile Version */}
+    <h2 className="block sm:hidden font-libre text-2xl font-bold text-white leading-tight">
+      Build{" "}
+      <span className="inline-block w-[140px] text-[#6fa8d6]">
+        <FlipWords
+          words={["modern", "clean", "professional", "functional"]}
+          duration={2000}
+        />
+      </span>
+      <br />
+      websites with Evolo
+    </h2>
+  </div>
+</div>
+
                   <section ref={servicesRef}>
                   <OurServices/>
                   <TechCarousel />
@@ -91,7 +111,10 @@ export function App() {
                   <section ref={portfolioRef}>
                     <Portfolio />
                   </section>
+                 
+                  <section ref={faqRef}>
                   <FAQSection />
+                  </section>
                   <EmailSection/>
                  
                   
