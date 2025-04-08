@@ -72,7 +72,7 @@ const faqRef = useRef<HTMLDivElement>(null)
                   <HeroSection />
                  
                   <div className="py-14 bg-[#0c1a39]">
-  <div className="max-w-4xl mx-auto text-center ">
+  <div className="max-w-5xl mx-auto text-center ">
     {/* Desktop Version */}
     <h2 className="hidden sm:block font-libre text-5xl font-bold text-white">
                         Build{" "}
