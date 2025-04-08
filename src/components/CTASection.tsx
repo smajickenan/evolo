@@ -1,6 +1,14 @@
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
-const CTASection  = () => {
+const CTASection = () => {
+  const scrollToMeteors = () => {
+    const meteorsSection = document.getElementById('meteors-section');
+    if (meteorsSection) {
+      meteorsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative py-8 sm:py-16 md:py-24 lg:py-32 overflow-hidden flex justify-center min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh]">
       <div className="w-[90vw] sm:w-[80vw] md:w-[75vw] lg:w-[70vw] relative rounded-2xl overflow-hidden">
@@ -43,42 +51,42 @@ const CTASection  = () => {
               ease: "easeInOut",
             }}
           />
+          
           <motion.div
-            className="absolute w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] rounded-full"
+            className="absolute w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px] rounded-full"
             style={{
-              background: 'radial-gradient(circle, rgba(255,204,51,0.15) 0%, rgba(255,204,51,0) 70%)',
-              top: '30%',
-              right: '10%',
+              background: 'radial-gradient(circle, rgba(153,51,255,0.15) 0%, rgba(153,51,255,0) 70%)',
+              bottom: '20%',
+              right: '20%',
             }}
             animate={{
               y: [0, 30, 0],
-              scale: [1, 1.5, 1],
+              scale: [1, 1.1, 1],
             }}
             transition={{
-              duration: 7,
+              duration: 6,
               repeat: Infinity,
               repeatType: "loop",
               ease: "easeInOut",
-              delay: 1,
             }}
           />
+          
           <motion.div
-            className="absolute w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full"
+            className="absolute w-[120px] h-[120px] sm:w-[170px] sm:h-[170px] md:w-[220px] md:h-[220px] lg:w-[270px] lg:h-[270px] rounded-full"
             style={{
-              background: 'radial-gradient(circle, rgba(153,51,255,0.1) 0%, rgba(153,51,255,0) 70%)',
-              top: '20%',
-              left: '40%',
+              background: 'radial-gradient(circle, rgba(51,204,255,0.15) 0%, rgba(51,204,255,0) 70%)',
+              top: '40%',
+              right: '10%',
             }}
             animate={{
-              y: [0, -25, 0],
-              scale: [1, 1.5, 1],
+              y: [0, -20, 0],
+              scale: [1, 1.15, 1],
             }}
             transition={{
-              duration: 12,
+              duration: 5,
               repeat: Infinity,
               repeatType: "loop",
               ease: "easeInOut",
-              delay: 1,
             }}
           />
         </div>
@@ -126,7 +134,10 @@ const CTASection  = () => {
             It's time to convert your website into a money-making business asset.
           </h3>
           <div className="flex justify-center mt-4 sm:mt-6 md:mt-8">
-            <button className="bg-white hover:bg-gray-100 text-[#08183e] font-extrabold py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6 border border-gray-200 rounded-xl transition-colors text-sm sm:text-base">
+            <button 
+              onClick={scrollToMeteors}
+              className="bg-white hover:bg-gray-100 text-[#08183e] font-extrabold py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6 border border-gray-200 rounded-xl transition-colors text-sm sm:text-base"
+            >
               Get a Free Website Audit
             </button>
           </div>
@@ -135,4 +146,5 @@ const CTASection  = () => {
     </section>
   )
 }
-export default CTASection
+
+export default CTASection;

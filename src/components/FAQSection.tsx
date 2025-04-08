@@ -106,7 +106,7 @@ const FAQSection  = () => {
 
   ]
   return (
-    <section className="relative bg-white/80">
+    <section id="faq" className="relative bg-white/80">
     
       
       <div className="max-w-3xl mx-auto relative z-10 px-4">

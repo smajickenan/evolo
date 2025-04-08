@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from 'lucide-react';
 import { Compare } from './ui/Compare';
+import { useModal } from '../context/ModalContext';
 
 export const HeroSection = () => {
+  const { openContactModal } = useModal();
+  
   return (
     <section className="relative min-h-[83vh] flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -17,11 +20,13 @@ export const HeroSection = () => {
             Transform Your Business with a Website That Stands Out.
           </h1>
           <p className="font-popins text-lg sm:text-xl lg:text-2xl text-[#08183e]">
-            At Evolo, we fully revamp your company's online footprint, creating modern, responsive, SEO-optimized websites that attract more customers.
-          </p>
+          Face-to-face, US-based team that captures your vision and converts visitors into customers – without breaking the bank  </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="font-popins px-6 sm:px-8 py-2.5 sm:py-3 bg-[#08183e] hover:bg-[#023157] text-white rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5">
-              Contact us
+            <button 
+              onClick={openContactModal}
+              className="font-popins px-6 sm:px-8 py-2.5 sm:py-3 bg-[#08183e] hover:bg-[#023157] text-white rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
+            >
+              Request Your Free Quote
             </button>
           </div>
         </motion.div>

@@ -84,17 +84,16 @@ const parallaxProducts = [
 
 const Portfolio = () => {
   return (
-    <section className="w-full py-10 relative bg-white/80">
+    <section id="portfolio" className="w-full py-10 relative bg-white/80">
     
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="font-libre text-[#08183e] text-4xl sm:text-3xl lg:text-7xl font-extrabold  tracking-tight">
-            Our Portfolio
+          See the Evolo Difference
           </h2>
           <p className="mt-4 text-base sm:text-xl font-popins text-[#08183e] max-w-2xl mx-auto">
-            Explore our latest projects and see how we've helped businesses transform their digital presence.
-          </p>
+          Browse our latest projects and discover how we’ve helped businesses dramatically enhance their online presence and achieve tangible growth. </p>
         </div>
         
         {/* Parallax Portfolio Section */}

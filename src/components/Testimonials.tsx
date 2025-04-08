@@ -2,15 +2,15 @@ import React from 'react';
 import { StarIcon } from 'lucide-react';
 export const Testimonials = () => {
   const testimonials = [{
-    quote: "Evolo completely revamped my site and my customers noticed immediately. Couldn't recommend enough!",
-    author: 'Marney B.',
+    quote: "Evolo completely transformed our outdated website into a modern platform that instantly improved client engagement and boosted our sales.",
+    author: 'Mary B.',
     stars: 5
   }, {
-    quote: 'Finally, a team that explains things clearly and delivers results.',
-    author: 'Anonymous',
+    quote: 'What impressed me most about Evolo was their commitment to meetings and clear communication. They truly understood what we needed.',
+    author: 'Alex R.',
     stars: 5
   }, {
-    quote: "Our website traffic doubled after Evolo's redesign!",
+    quote: "Our site's traffic and online leads have significantly increased since partnering with Evolo. Highly recommend!",
     author: 'Jason S.',
     stars: 5
   }];

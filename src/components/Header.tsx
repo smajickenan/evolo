@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useModal } from '../context/ModalContext';
 
 interface HeaderProps {
   scrollToPricing: () => void;
@@ -15,6 +16,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +40,13 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  const scrollToMeteors = () => {
+    const meteorsSection = document.getElementById('meteors-section');
+    if (meteorsSection) {
+      meteorsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <motion.header
@@ -98,107 +107,135 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               <span className="font-popins relative z-10">Portfolio</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button 
+            <button
               onClick={scrollToFAQ}
-              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">FAQ</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
-            <button 
-              onClick={scrollToContact}
-              className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
+            <button
+              onClick={scrollToMeteors}
+              className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">Contact</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
-            
-            <Link
-              to="/contact"
-              className="font-popins bg-[#0c1a39] text-white px-8 py-2.5 rounded-full hover:bg-[#023157]/90 transition-all duration-300 text-l font-semibold hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
+            <button
+              onClick={openContactModal}
+              className="bg-[#023157] text-white px-6 py-2 rounded-full hover:bg-[#023157]/90 transition-all duration-300 font-semibold"
             >
               Get a Quote
-            </Link>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#023157]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-md text-[#0c1a39] hover:bg-[#0c1a39]/10 focus:outline-none"
           >
             <svg
-              className="w-6 h-6"
+              className="h-6 w-6"
               fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden  "
-            >
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                
-                <Link
-                  to="/about"
-                  className="font-popins block px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  to="/services"
-                  className="font-popins block px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Services
-                </Link>
-                <button
-                  onClick={() => {
-                    scrollToPortfolio();
-                    setIsMenuOpen(false);
-                  }}
-                  className="font-popins w-full text-left px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                >
-                  Portfolio
-                </button>
-                <button
-                  onClick={() => {
-                    scrollToContact();
-                    setIsMenuOpen(false);
-                  }}
-                  className="font-popins w-full text-left px-3 py-2 text-[#023157] hover:text-[#023157]/80 transition-all duration-300 text-xl font-semibold hover:bg-[#023157]/5 rounded-lg"
-                >
-                  Contact
-                </button>
-                <Link
-                  to="/contact"
-                  className="font-popins block px-3 py-2 bg-[#08183e] text-white rounded-full hover:bg-[#023157]/90 transition-all duration-300 text-center text-xl font-semibold hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get a Quote
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/90 backdrop-blur-md shadow-md"
+          >
+            <div className="px-4 py-2 space-y-2">
+              <Link
+                to="/about"
+                className="block py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <button
+                onClick={() => {
+                  scrollToServices();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => {
+                  scrollToPricing();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => {
+                  scrollToPortfolio();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+              >
+                Portfolio
+              </button>
+              <button
+                onClick={() => {
+                  scrollToFAQ();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+              >
+                FAQ
+              </button>
+              <button
+                onClick={() => {
+                  scrollToMeteors();
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
+              >
+                Contact
+              </button>
+              <button
+                onClick={() => {
+                  openContactModal();
+                  setIsMenuOpen(false);
+                }}
+                className="w-full bg-[#023157] text-white px-6 py-2 rounded-full hover:bg-[#023157]/90 transition-all duration-300 font-semibold mt-4"
+              >
+                Get a Quote
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

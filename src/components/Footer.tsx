@@ -1,7 +1,18 @@
 import React from 'react';
 import { MailIcon, PhoneIcon, FacebookIcon, TwitterIcon, InstagramIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useModal } from '../context/ModalContext';
 
 export const Footer = () => {
+  const { openContactModal } = useModal();
+  
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-[#023157] border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -25,34 +36,57 @@ export const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-white/60 hover:text-[#6fa8d6]">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-white/60 hover:text-[#6fa8d6]">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="text-white/60 hover:text-[#6fa8d6]">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#pricing" className="text-white/60 hover:text-[#6fa8d6]">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-white/60 hover:text-[#6fa8d6]">
+                <Link to="/about" className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-white/60 hover:text-[#6fa8d6]">
+                <button 
+                  onClick={() => scrollToSection('services')} 
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
+                  Services
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('pricing')} 
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
+                  Pricing
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('portfolio')} 
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
+                  Portfolio
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('faq')} 
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
+                  FAQ
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('meteors-section')} 
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
                   Contact
-                </a>
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={openContactModal}
+                  className="text-white/60 hover:text-[#6fa8d6] transition-colors duration-300"
+                >
+                  Get a Quote
+                </button>
               </li>
             </ul>
           </div>
@@ -86,21 +120,8 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div className="text-center md:text-left">
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center justify-center md:justify-start space-x-2">
-                <MailIcon className="w-4 h-4 text-[#6fa8d6]" />
-                <a href="mailto:eli.jerome2@gmail.com" className="text-white/60 hover:text-[#6fa8d6]">
-                  eli.jerome2@gmail.com
-                </a>
-              </li>
-              <li className="flex items-center justify-center md:justify-start space-x-2">
-                <PhoneIcon className="w-4 h-4 text-[#6fa8d6]" />
-                <a href="tel:561-504-0590" className="text-white/60 hover:text-[#6fa8d6]">
-                  561-504-0590
-                </a>
-              </li>
-            </ul>
+            <h3 className="text-white font-semibold mb-4">Social Networks</h3>
+           
             <div className="flex justify-center md:justify-start space-x-4 mt-4">
               <a href="#" className="text-white/60 hover:text-[#6fa8d6]">
                 <FacebookIcon className="w-5 h-5" />

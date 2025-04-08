@@ -27,7 +27,7 @@ const AnimatedSection = ({ isRight = false }) => {
 
 export const OurServices = () => {
   return (
-    <div className="w-full min-h-screen bg-white/80 relative">
+    <div id="services" className="w-full min-h-screen bg-white/80 relative">
      
 
       {/* Hero Section */}
@@ -36,34 +36,26 @@ export const OurServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-start pt-20">
           <div className="lg:w-1/2">
             <h1 className="font-libre text-[#08183e] text-4xl md:text-3xl lg:text-4xl xl:text-5xl ">
-              DIGITAL MARKETING
+            FULL
               <br />
-              AGENCY
+              DIGITAL
               <br />
-              SPECIALISING IN
-              <br />
+             
               <span className="text-[#08183e] font-libre ">
-                LEAD GENERATION
+              PRESENCE
                 <br />
-                AND
+                MANAGEMENT
                 <br />
-                ECOMMERCE.
+               
               </span>
             </h1>
           </div>
           <div className="mt-8 lg:mt-0 lg:w-1/2">
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-[#08183e]">
-                Need more leads. Want to grow but don't know how. Not getting
-                the ROAs you once were or need a new strategy. Sound familiar?
-                You're not alone. We work with CEOs, GMs, CMOs and Marketing
-                Managers all over World solving these exact problems with
-                digital marketing solutions.
+              Evolo provides complete website services from design and development to SEO and digital marketing, ensuring your business is represented flawlessly online.
               </p>
-              <p className="text-sm md:text-base text-[#08183e]">
-                Evolo is a digital performance agency with an innate
-                understanding of business.
-              </p>
+            
             </div>
           </div>
         </div>
@@ -80,11 +72,11 @@ export const OurServices = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
               FACE-TO-FACE
               <br />
-              <span className=" text-[#08183e] font-libre">INTERACTION.</span>
+              <span className=" text-[#08183e] font-libre">PARTNERSHIP</span>
             </h2>
             <p className="text-[#08183e] mt-6 text-lg md:text-xl">
-            We don’t just design websites — we build relationships.
-            Through personal meetings and real-time feedback, we make sure your vision is understood and brought to life exactly the way you imagined it.     </p>
+            We believe in personal interactions and clear communication. Meet directly with our US-based team to bring your website vision to life exactly as you imagine it.
+            </p>
           </div>
         </div>
       </section>
@@ -99,15 +91,11 @@ export const OurServices = () => {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="max-w-lg">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              THE COMPLETE
-              <br />
-              MEDIA STACK.
+              CUSTOMIZED SOLUTIONS
+             
             </h2>
             <p className="mt-6 text-sm md:text-xl text-[#08183e]">
-              Full stack marketing ensures you're not missing an opportunity or
-              worse yet, being held to ransom by one channel. We build
-              integrated marketing campaigns that deploy all the tools necessary
-              to get the job done.
+            Every project at Evolo is unique. We tailor your website specifically to meet your business needs, ensuring it’s both beautiful and highly functional.
             </p>
           </div>
         </div>
@@ -123,14 +111,13 @@ export const OurServices = () => {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="ml-auto max-w-lg">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              FRONTEND
+             RESULTS-DRIVEN APPROACH
               <br />
-              <span className=" text-[#08183e] font-libre">DEVELOPMENT.</span>
+             
             </h2>
             <p className="text-[#08183e] mt-6 text-lg md:text-xl">
-              We believe in getting to know you, your industry, and your
-              problem, intimately. We're obsessive about detail and that means
-              better strategy and execution which means better outcomes for all.
+            We don't just create websites—we create business growth tools that attract customers, boost visibility, and drive sales.
+
             </p>
           </div>
         </div>
@@ -146,15 +133,12 @@ export const OurServices = () => {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="max-w-lg">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              THINK BIGGER
+            TRANSPARENT PRICING
               <br />
-             EXECUTE FASTER.
+    & PROCESS
             </h2>
             <p className="mt-6 text-sm md:text-xl text-[#08183e]">
-              Big ideas are only as good as your ability to execute them. It's
-              why at April Ford we invest in people that deliver, not just talk.
-              It's why we're all in-house, working together to deliver world
-              class marketing.
+            No hidden fees or mysterious workflows. We provide clear project timelines, straightforward pricing, and regular updates so you always know what's happening with your website investment.
             </p>
           </div>
         </div>
@@ -170,16 +154,14 @@ export const OurServices = () => {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="ml-auto max-w-lg">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              PERFORMANCE
+              ONGOING SUPPORT 
+             
+              
               <br />
-              CAMPAIGNS THAT
-              <br />
-              CUT THROUGH.
+              & GROWTH PARTNERSHIP
             </h2>
             <p className="mt-6 text-sm md:text-xl text-[#08183e]">
-              We develop performance campaigns with creative that cuts through.
-              Smart targeting, mind bending, brilliantly strategic, direct
-              response campaigns that convert.
+            Your success doesn't end at launch. We offer dedicated post-launch support and guidance to help your online presence evolve with your business goals, ensuring long-term digital success.
             </p>
           </div>
         </div>
