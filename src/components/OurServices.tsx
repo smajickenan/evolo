@@ -68,8 +68,52 @@ export const OurServices = () => {
           </div>
         </div>
       </section>
+      {/* Face to dave */}
+      <section className="w-full relative overflow-hidden py-12 md:py-16 z-10">
+        <div className="absolute left-0 top-0 w-[500px] h-full overflow-hidden">
+          <div className="w-full h-[90%] rounded-r-full relative overflow-hidden">
+            <AnimatedSection />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+          <div className="ml-auto max-w-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              FACE-TO-FACE
+              <br />
+              <span className=" text-[#08183e] font-libre">INTERACTION.</span>
+            </h2>
+            <p className="text-[#08183e] mt-6 text-lg md:text-xl">
+            We don’t just design websites — we build relationships.
+            Through personal meetings and real-time feedback, we make sure your vision is understood and brought to life exactly the way you imagined it.     </p>
+          </div>
+        </div>
+      </section>
 
+{/* Media Stack Section */}
+<section className="w-full relative overflow-hidden py-12 md:py-16 z-10">
+        <div className="absolute right-0 top-0 w-[600px] h-full">
+          <div className="w-full h-full rounded-l-full relative overflow-hidden">
+            <AnimatedSection isRight={true} />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+          <div className="max-w-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              THE COMPLETE
+              <br />
+              MEDIA STACK.
+            </h2>
+            <p className="mt-6 text-sm md:text-xl text-[#08183e]">
+              Full stack marketing ensures you're not missing an opportunity or
+              worse yet, being held to ransom by one channel. We build
+              integrated marketing campaigns that deploy all the tools necessary
+              to get the job done.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* Know You Section */}
+      
       <section className="w-full relative overflow-hidden py-12 md:py-16 z-10">
         <div className="absolute left-0 top-0 w-[500px] h-full overflow-hidden">
           <div className="w-full h-[90%] rounded-r-full relative overflow-hidden">
@@ -92,7 +136,7 @@ export const OurServices = () => {
         </div>
       </section>
 
-      {/* Media Stack Section */}
+      {/* Execute Section */}
       <section className="w-full relative overflow-hidden py-12 md:py-16 z-10">
         <div className="absolute right-0 top-0 w-[600px] h-full">
           <div className="w-full h-full rounded-l-full relative overflow-hidden">
@@ -102,15 +146,15 @@ export const OurServices = () => {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
           <div className="max-w-lg">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              THE COMPLETE
+              THINK BIGGER
               <br />
-              MEDIA STACK.
+             EXECUTE FASTER.
             </h2>
             <p className="mt-6 text-sm md:text-xl text-[#08183e]">
-              Full stack marketing ensures you're not missing an opportunity or
-              worse yet, being held to ransom by one channel. We build
-              integrated marketing campaigns that deploy all the tools necessary
-              to get the job done.
+              Big ideas are only as good as your ability to execute them. It's
+              why at April Ford we invest in people that deliver, not just talk.
+              It's why we're all in-house, working together to deliver world
+              class marketing.
             </p>
           </div>
         </div>
@@ -141,29 +185,7 @@ export const OurServices = () => {
         </div>
       </section>
 
-      {/* Execute Section */}
-      <section className="w-full relative overflow-hidden py-12 md:py-16 z-10">
-        <div className="absolute right-0 top-0 w-[600px] h-full">
-          <div className="w-full h-full rounded-l-full relative overflow-hidden">
-            <AnimatedSection isRight={true} />
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-          <div className="max-w-lg">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
-              THINK BIGGER
-              <br />
-             EXECUTE FASTER.
-            </h2>
-            <p className="mt-6 text-sm md:text-xl text-[#08183e]">
-              Big ideas are only as good as your ability to execute them. It's
-              why at April Ford we invest in people that deliver, not just talk.
-              It's why we're all in-house, working together to deliver world
-              class marketing.
-            </p>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };
