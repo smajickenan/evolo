@@ -119,7 +119,7 @@ const faqRef = useRef<HTMLDivElement>(null)
                  
                   
 
-                  <ValueProposition />
+                  {/* <ValueProposition /> */}
                 
                   <Testimonials />
                   <section ref={pricingRef}>
