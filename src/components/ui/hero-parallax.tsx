@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 interface Product {
   title: string;
-  link: string;
+
   thumbnail: string;
 }
 
@@ -98,22 +98,21 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[25rem] relative shrink-0"
+      className="group/product h-96 w-[30rem] relative shrink-0"
     >
       <Link
-        to={product.link}
-        className="block group-hover/product:shadow-2xl"
+        className="block h-full w-full" 
+        to={""}
       >
-        <img
-          src={product.thumbnail}
-          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-3xl"
-          alt={product.title}
-        />
+        <div className="relative h-full w-full overflow-hidden ">
+          <img
+            src={product.thumbnail}
+            className="object-contain w-full h-full transition-transform duration-300 group-hover/product:scale-105"
+            alt={product.title}
+          />
+         
+        </div>
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 group-hover/product:rounded-3xl bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
     </motion.div>
   );
 };
