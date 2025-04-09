@@ -48,7 +48,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[150vh] sm:h-[160vh] overflow-hidden antialiased relative flex flex-col self-auto"
+      className="h-[110vh] sm:h-[130vh] overflow-hidden antialiased relative flex flex-col self-auto"
     >
       <div className="mt-20">
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mb-10">
@@ -98,7 +98,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-72 w-[30rem] relative shrink-0"
     >
       <Link
         className="block h-full w-full" 

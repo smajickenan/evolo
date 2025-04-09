@@ -24,6 +24,7 @@ import { ModalProvider, useModal } from "./context/ModalContext";
 
 import EmailSection from "./components/EmailSection";
 import FAQSection from "./components/FAQSection";
+import Statistics from "./components/Statistics";
 
 // Wrapper component to use the modal context
 const AppContent = () => {
@@ -128,6 +129,7 @@ const AppContent = () => {
                 <section ref={pricingRef}>
                   <Pricing />
                 </section>
+                <Statistics />
                 <section ref={contactRef}>
                   <MeteorsSection />
                 </section>
