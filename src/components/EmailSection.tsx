@@ -10,7 +10,7 @@ const EmailSection = () => {
     setTimeout(() => setCopied(false), 2000)
   }
   return (
-    <section className="relative text-center py-32 bg-white/80">
+    <section className="relative text-center pb-14 pt-32 bg-white/80">
      
       
       
