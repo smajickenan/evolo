@@ -36,7 +36,7 @@ const AboutUs = () => {
       {/* Main Content */}
       <div className="flex-grow relative z-10">
         {/* Content Container */}
-        <div className="pt-24 md:pt-32">
+        <div className="pt-24 md:pt-16">
           {/* Hero Section */}
           <section className="w-full h-auto py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <div className="w-full px-6 md:px-12 lg:px-20 relative z-10 flex flex-col items-center text-center">
@@ -57,7 +57,7 @@ const AboutUs = () => {
           </section>
 
           {/* Two-Column Content Section */}
-          <section className="w-full py-12 md:py-16 lg:py-20 relative">
+          <section className="w-full py-12 md:py-16 lg:py-4 relative">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
               <div className="backdrop-blur-sm bg-black/10 p-8 md:p-12 rounded-xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
