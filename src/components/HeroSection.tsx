@@ -20,7 +20,7 @@ export const HeroSection = () => {
           Your Website Should Be Working Harder.<br/>
           <span className="italic font-normal text-3xl">Let's turn it into your best salesperson.</span> </h1>
           <p className="font-popins text-lg sm:text-xl lg:text-2xl text-[#08183e]">
-          We're Evolo — a U.S.-based team that transforms outdated websites into modern, revenue-driving machines. No confusing tech speak, no vanishing freelancers — just clear communication, sleek design, and results you can see. </p>
+          We're Evolo — a U.S. based team that transforms outdated websites into modern, revenue-driving machines. No confusing tech speak, no vanishing freelancers — just clear communication, sleek design, and results you can see. </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={openContactModal}

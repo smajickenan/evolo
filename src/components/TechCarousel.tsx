@@ -251,7 +251,7 @@ const TechRow: React.FC<{ items: Technology[], direction: 'left' | 'right' }> = 
 
 export const TechCarousel: React.FC = () => {
   return (
-    <section className="relative bg-white/80 py-10 sm:py-16 md:py-20 w-full">
+    <section className="relative bg-white/80 py-20 sm:py-16 md:py-40 w-full">
       <div className="w-full relative z-10">
         <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold text-center text-[#08183e] mb-6 sm:mb-8 md:mb-12 px-4">
           Technologies We Use

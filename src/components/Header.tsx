@@ -63,8 +63,8 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             
-            <span className="text-5xl font-extrabold text-[#0c1a39] tracking-tight hover:text-[#023157]/90 transition-all duration-300">
-              Evolo
+            <span className="text-5xl font-extrabold text-[#0c1a39] tracking-tight hover:text-[#023157]/90 transition-all duration-300 md:-ml-4 lg:-ml-20">
+             Evolo
             </span>
           </Link>
 
