@@ -62,12 +62,8 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/logo.png" 
-              alt="Evolo Logo" 
-              className="h-16 w-16"
-            />
-            <span className="text-3xl font-extrabold text-[#0c1a39] tracking-tight hover:text-[#023157]/90 transition-all duration-300">
+            
+            <span className="text-5xl font-extrabold text-[#0c1a39] tracking-tight hover:text-[#023157]/90 transition-all duration-300">
               Evolo
             </span>
           </Link>
@@ -125,7 +121,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               onClick={openContactModal}
               className="bg-[#023157] text-white px-6 py-2 rounded-full hover:bg-[#023157]/90 transition-all duration-300 font-semibold"
             >
-              Get a Quote
+              Contact us
             </button>
           </nav>
 
@@ -230,7 +226,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
                 }}
                 className="w-full bg-[#023157] text-white px-6 py-2 rounded-full hover:bg-[#023157]/90 transition-all duration-300 font-semibold mt-4"
               >
-                Get a Quote
+                Contact us
               </button>
             </div>
           </motion.div>

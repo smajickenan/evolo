@@ -12,7 +12,7 @@ const parallaxProducts = [
   {
     title: "Corporate Website",
   
-    thumbnail: "/site1.webp"
+    thumbnail: "/site1.png"
   },
   {
     title: "Pet Care Platform",
@@ -42,7 +42,7 @@ const parallaxProducts = [
   {
     title: "Corporate Website",
 
-    thumbnail: "/site3.webp"
+    thumbnail: "/site3.png"
   },
   {
     title: "Pet Care Platform",
@@ -70,7 +70,7 @@ const parallaxProducts = [
   {
     title: "Corporate Website",
 
-    thumbnail: "/site9.webp"
+    thumbnail: "/site9.png"
   }
   ,
   {
@@ -88,15 +88,15 @@ const parallaxProducts = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="w-full py-10 relative bg-white/80">
+    <section id="portfolio" className="w-full py-10 relative bg-white/80 ">
     
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 lg:pt-20">
         <div className="text-center mb-12">
-          <h2 className="font-libre text-[#08183e] text-4xl sm:text-3xl lg:text-7xl font-extrabold  tracking-tight">
+          <h2 className="font-libre mb-20 text-[#08183e] text-4xl sm:text-3xl lg:text-7xl font-extrabold  tracking-tight">
           See the Evolo Difference
           </h2>
-          <p className="mt-4 text-base sm:text-xl font-popins text-[#08183e] max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-xl mb-20 font-popins text-[#08183e] max-w-2xl mx-auto">
           Browse our latest projects and discover how we've helped businesses dramatically enhance their online presence and achieve tangible growth. </p>
         </div>
         

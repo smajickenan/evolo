@@ -27,34 +27,29 @@ const AnimatedSection = ({ isRight = false }) => {
 
 export const OurServices = () => {
   return (
-    <div id="services" className="w-full min-h-screen bg-white/80 relative">
+    <div id="services" className="w-full min-h-screen bg-white/80 relative pt-3">
+      <div className="flex flex-col gap-[10px] md:gap-0">
       {/* Hero Section */}
-      <section className="w-full px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-8 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-start pt-20">
-          <div className="lg:w-1/2">
-            <h1 className="font-libre text-[#08183e] text-4xl md:text-3xl lg:text-4xl xl:text-5xl">
-              FULL
-              <br />
-              DIGITAL
-              <br />
-              <span className="text-[#08183e] font-libre">
-                PRESENCE
-                <br />
-                MANAGEMENT
-              </span>
-            </h1>
+      <section className="w-full h-[350px] md:h-auto md:py-12 lg:py-16 relative overflow-hidden z-10">
+          <div className="absolute right-0 top-0 w-full md:w-[600px] h-full">
+            <div className="w-full h-full rounded-l-full relative overflow-hidden">
+              <AnimatedSection isRight={true} />
+            </div>
           </div>
-          <div className="mt-8 lg:mt-0 lg:w-1/2">
-            <div className="space-y-6">
-              <p className="text-lg md:text-xl text-[#08183e]">
-                Evolo provides complete website services from design and development to SEO and digital marketing, ensuring your business is represented flawlessly online.
+          <div className="w-full h-full px-6 md:px-12 lg:px-20 relative z-10 flex items-center">
+            <div className="max-w-lg">
+              <h2 className="text-3xl ml-3 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              COMPLETE DIGITAL PRESENCE
+              <br />
+              </h2>
+              <p className="text-[#08183e] ml-3 mt-6 text-lg md:text-xl">
+              Evolo provides complete website services from design and development to SEO and digital marketing, ensuring your business is represented flawlessly online.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div className="flex flex-col gap-[10px] md:gap-0">
+      
         {/* Face to Face */}
         <section className="w-full h-[350px] md:h-auto md:py-12 lg:py-16 relative overflow-hidden z-10">
           <div className="absolute left-0 top-0 w-full md:w-[500px] h-full overflow-hidden">
@@ -77,7 +72,7 @@ export const OurServices = () => {
         </section>
 
         {/* Customized Solutions */}
-        <section className="w-[110vw] h-[350px] md:h-auto md:py-12 lg:py-16 relative overflow-hidden z-10">
+        <section className="w-full h-[350px] md:h-auto md:py-12 lg:py-16 relative overflow-hidden z-10">
           <div className="absolute right-0 top-0 w-full md:w-[600px] h-full">
             <div className="w-full h-full rounded-l-full relative overflow-hidden">
               <AnimatedSection isRight={true} />
@@ -85,10 +80,10 @@ export const OurServices = () => {
           </div>
           <div className="w-full h-full px-6 md:px-12 lg:px-20 relative z-10 flex items-center">
             <div className="max-w-lg">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              <h2 className="text-3xl ml-3 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
                 CUSTOMIZED SOLUTIONS
               </h2>
-              <p className="text-[#08183e] mt-6 text-lg md:text-xl">
+              <p className="text-[#08183e] ml-3 mt-6 text-lg md:text-xl">
                 Every project at Evolo is unique. We tailor your website specifically to meet your business needs, ensuring it's both beautiful and highly functional.
               </p>
             </div>

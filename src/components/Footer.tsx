@@ -16,7 +16,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[#023157] border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="text-center md:text-left">
             <div className="flex justify-center md:justify-start items-center">
@@ -118,22 +118,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="text-center md:text-left">
-            <h3 className="text-white font-semibold mb-4">Social Networks</h3>
-           
-            <div className="flex justify-center md:justify-start space-x-4 mt-4">
-              <a href="#" className="text-white/60 hover:text-[#6fa8d6]">
-                <FacebookIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-white/60 hover:text-[#6fa8d6]">
-                <TwitterIcon className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-white/60 hover:text-[#6fa8d6]">
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+         
         </div>
 
         {/* Copyright */}

@@ -138,7 +138,7 @@ const CTASection = () => {
               onClick={scrollToMeteors}
               className="bg-white hover:bg-gray-100 text-[#08183e] font-extrabold py-2 sm:py-2.5 md:py-3 px-4 sm:px-5 md:px-6 border border-gray-200 rounded-xl transition-colors text-sm sm:text-base"
             >
-              Get a Free Website Audit
+              Contact us
             </button>
           </div>
         </div>

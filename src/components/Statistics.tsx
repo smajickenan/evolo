@@ -23,7 +23,7 @@ const statistics = [
     source: "Forrester Research"
   },
   {
-    percentage: "75%",
+    percentage: "79%",
     description: "of users never scroll past the first page of Google results, highlighting the critical importance of good SEO practices.",
     source: "HubSpot"
   },
@@ -36,7 +36,7 @@ const statistics = [
 
 const Statistics = () => {
   return (
-    <section className="w-full py-20 bg-white/80 relative overflow-hidden">
+    <section className="hidden md:block w-full py-20 bg-white/80 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-20"></div>
       

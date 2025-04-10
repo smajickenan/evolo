@@ -10,7 +10,7 @@ import { Testimonials } from "./components/Testimonials";
 import { Footer } from "./components/Footer";
 import { AnimatedBackground } from "./components/AnimatedBackground";
 import { LinkPreview } from "./components/ui/LinkPreview";
-import Pricing from "./components/Pricing";
+
 import { FlipWords } from "./components/ui/FlipWords";
 import TechWeUse from "./components/TechnologiesWeUse";
 import MeteorsSection from "./components/Meteors";
@@ -25,6 +25,8 @@ import { ModalProvider, useModal } from "./context/ModalContext";
 import EmailSection from "./components/EmailSection";
 import FAQSection from "./components/FAQSection";
 import Statistics from "./components/Statistics";
+import Pricing from "./components/Pricing";
+import AboutUs from "./components/AboutUs";
 
 // Wrapper component to use the modal context
 const AppContent = () => {
@@ -114,6 +116,7 @@ const AppContent = () => {
                 </div>
                 <section ref={servicesRef}>
                   <OurServices />
+                  <TechCarousel/>
                 </section>
 
                 <section ref={portfolioRef}>
@@ -136,7 +139,7 @@ const AppContent = () => {
               </main>
             }
           />
-          <Route path="/about" element={<div>About Page</div>} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
         <Footer />
 

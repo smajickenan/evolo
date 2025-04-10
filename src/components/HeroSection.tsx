@@ -9,7 +9,7 @@ export const HeroSection = () => {
   
   return (
     <section className="relative min-h-[83vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 0.8, y: 0 }}
@@ -17,16 +17,16 @@ export const HeroSection = () => {
           className="flex flex-col justify-center space-y-6 lg:space-y-8"
         >
           <h1 className="font-libre text-4xl sm:text-5xl lg:text-6xl font-black bg-clip-text text-[#08183e]">
-            Transform Your Business with a Website That Stands Out.
-          </h1>
+          Your Website Should Be Working Harder.<br/>
+          <span className="italic font-normal text-3xl">Let's turn it into your best salesperson.</span> </h1>
           <p className="font-popins text-lg sm:text-xl lg:text-2xl text-[#08183e]">
-          Face-to-face, US-based team that captures your vision and converts visitors into customers – without breaking the bank  </p>
+          We're Evolo — a U.S.-based team that transforms outdated websites into modern, revenue-driving machines. No confusing tech speak, no vanishing freelancers — just clear communication, sleek design, and results you can see. </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={openContactModal}
               className="font-popins px-6 sm:px-8 py-2.5 sm:py-3 bg-[#08183e] hover:bg-[#023157] text-white rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#023157]/20 hover:-translate-y-0.5"
             >
-              Request Your Free Quote
+              Get Your Free Quote
             </button>
           </div>
         </motion.div>
