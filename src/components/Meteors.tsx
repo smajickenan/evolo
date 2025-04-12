@@ -40,7 +40,7 @@ const MeteorsSection = () => {
 
             <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               <div className="text-white/80 text-sm sm:text-base lg:text-xl">
-                Ready to improve your website's performance? Request a free
+               Request a free
                 website audit today and discover opportunities to enhance your
                 online presence.
               
@@ -98,7 +98,7 @@ const MeteorsSection = () => {
                   htmlFor="phone"
                   className="block lg:text-xl sm:text-sm font-medium text-white/80 mb-1"
                 >
-                  Phone
+                  Phone (optional)
                 </label>
                 <input
                   type="tel"
@@ -106,7 +106,6 @@ const MeteorsSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  required
                   className="w-full px-3 sm:px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#6fa8d6] focus:border-transparent text-sm sm:text-base"
                   placeholder="Your phone number"
                 />

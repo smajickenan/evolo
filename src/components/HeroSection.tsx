@@ -18,7 +18,7 @@ export const HeroSection = () => {
         >
           <h1 className="font-libre text-4xl sm:text-5xl lg:text-6xl font-black bg-clip-text text-[#08183e]">
           Your Website Should Be Working Harder.<br/>
-          <span className="italic font-normal text-3xl">Let's turn it into your best salesperson.</span> </h1>
+          <span className="font-cormorant italic text-3xl sm:text-4xl lg:text-5xl font-medium">Let's turn it into your best salesperson.</span> </h1>
           <p className="font-popins text-lg sm:text-xl lg:text-2xl text-[#08183e]">
           We're Evolo — a U.S. based team that transforms outdated websites into modern, revenue-driving machines. No confusing tech speak, no vanishing freelancers — just clear communication, sleek design, and results you can see. </p>
           <div className="flex flex-col sm:flex-row gap-4">

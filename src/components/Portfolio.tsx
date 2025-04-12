@@ -88,7 +88,7 @@ const parallaxProducts = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="w-full py-0 relative bg-white/80 ">
+    <section id="portfolio" className="w-full py-3 relative bg-white/80 ">
     
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 lg:pt-20">

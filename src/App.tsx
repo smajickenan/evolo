@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { ValueProposition } from "./components/ValueProposition";
@@ -27,6 +28,17 @@ import FAQSection from "./components/FAQSection";
 import Statistics from "./components/Statistics";
 import Pricing from "./components/Pricing";
 import AboutUs from "./components/AboutUs";
+
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 // Wrapper component to use the modal context
 const AppContent = () => {
@@ -70,84 +82,118 @@ const AppContent = () => {
           scrollToPortfolio={scrollToPortfolio}
           scrollToFAQ={scrollToFAQ}
         />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <main>
-                <HeroSection />
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <HeroSection />
 
-                <div className="py-14 bg-[#0c1a39]">
-                  <div className="max-w-5xl mx-auto text-center ">
-                    {/* Desktop Version */}
-                    <h2 className="hidden sm:block font-libre text-5xl font-bold text-white">
-                      Build{" "}
-                      <FlipWords
-                        words={[
-                          "modern",
-                          "clean",
-                          "professional",
-                          "functional",
-                        ]}
-                        duration={2000}
-                        className="text-[#6fa8d6]"
-                      />{" "}
-                      websites with Evolo
-                    </h2>
+                    <div className="py-14 bg-[#0c1a39]">
+                      <div className="max-w-5xl mx-auto text-center ">
+                        {/* Desktop Version */}
+                        <h2 className="hidden sm:block font-libre text-5xl font-bold text-white">
+                          Build{" "}
+                          <FlipWords
+                            words={[
+                              "modern",
+                              "clean",
+                              "professional",
+                              "functional",
+                            ]}
+                            duration={2000}
+                            className="text-[#6fa8d6]"
+                          />{" "}
+                          websites with Evolo
+                        </h2>
 
-                    {/* Mobile Version */}
-                    <h2 className="block sm:hidden font-libre text-2xl font-bold text-white leading-tight">
-                      Build{" "}
-                      <span className="inline-block w-[140px] text-[#6fa8d6]">
-                        <FlipWords
-                          words={[
-                            "modern",
-                            "clean",
-                            "professional",
-                            "functional",
-                          ]}
-                          duration={2000}
-                        />
-                      </span>
-                      <br />
-                      websites with Evolo
-                    </h2>
+                        {/* Mobile Version */}
+                        <h2 className="block sm:hidden font-libre text-2xl font-bold text-white leading-tight">
+                          Build{" "}
+                          <span className="inline-block w-[140px] text-[#6fa8d6]">
+                            <FlipWords
+                              words={[
+                                "modern",
+                                "clean",
+                                "professional",
+                                "functional",
+                              ]}
+                              duration={2000}
+                            />
+                          </span>
+                          <br />
+                          websites with Evolo
+                        </h2>
+                      </div>
+                    </div>
+                    <section ref={servicesRef}>
+                      <OurServices />
+                      <TechCarousel/>
+                    </section>
+
+                    <section ref={portfolioRef}>
+                      <Portfolio />
+                    </section>
+                    <section ref={faqRef}>
+                      <FAQSection />
+                    </section>
+                    <EmailSection />
+
+                    {/* <ValueProposition /> */}
+                    <Testimonials />
+                    <section ref={pricingRef}>
+                      <Pricing />
+                    </section>
+                    <Statistics />
+                    <section ref={contactRef}>
+                      <MeteorsSection />
+                    </section>
+                  </motion.div>
+                  <div className="relative z-20 bg-[#08183e] w-full">
+                    <Footer />
                   </div>
-                </div>
-                <section ref={servicesRef}>
-                  <OurServices />
-                  <TechCarousel/>
-                </section>
+                </>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <AboutUs />
+                  </motion.div>
+                  <div className="relative z-20 bg-[#08183e] w-full">
+                    <Footer />
+                  </div>
+                </>
+              }
+            />
+          </Routes>
+        
 
-                <section ref={portfolioRef}>
-                  <Portfolio />
-                </section>
-                <section ref={faqRef}>
-                  <FAQSection />
-                </section>
-                <EmailSection />
-
-                {/* <ValueProposition /> */}
-                <Testimonials />
-                <section ref={pricingRef}>
-                  <Pricing />
-                </section>
-                <Statistics />
-                <section ref={contactRef}>
-                  <MeteorsSection />
-                </section>
-              </main>
-            }
-          />
-          <Route path="/about" element={<AboutUs />} />
-        </Routes>
-        <Footer />
+        </AnimatePresence>
 
         {/* Contact Form Modal */}
-        <ContactFormModal
-          isOpen={isContactModalOpen}
-          onClose={closeContactModal}
-        />
+        <AnimatePresence>
+          {isContactModalOpen && (
+            <ContactFormModal
+              isOpen={isContactModalOpen}
+              onClose={closeContactModal}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
@@ -156,6 +202,7 @@ const AppContent = () => {
 export function App() {
   return (
     <Router>
+      <ScrollToTop />
       <ModalProvider>
         <AppContent />
       </ModalProvider>

@@ -27,7 +27,7 @@ const AnimatedSection = ({ isRight = false }) => {
 
 export const OurServices = () => {
   return (
-    <div id="services" className="w-full min-h-screen bg-white/80 relative pt-3">
+    <div id="services" className="w-full min-h-screen bg-white/80 relative pt-20">
       <div className="flex flex-col gap-[10px] md:gap-0">
       {/* Hero Section */}
       <section className="w-full h-[350px] md:h-auto md:py-12 lg:py-16 relative overflow-hidden z-10">

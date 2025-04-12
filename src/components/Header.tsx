@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
 
 interface HeaderProps {
@@ -17,6 +17,8 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { openContactModal } = useModal();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +42,16 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
+  const handleNavigation = (action: () => void) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Use setTimeout to ensure the navigation happens before scrolling
+      setTimeout(action, 100);
+    } else {
+      action();
+    }
+  };
 
   const scrollToMeteors = () => {
     const meteorsSection = document.getElementById('meteors-section');
@@ -78,40 +90,36 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               <span className="font-popins relative z-10">About</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link
-              to="/services"
+            <button
+              onClick={() => handleNavigation(scrollToServices)}
               className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToServices();
-              }}
             >
               <span className="font-popins relative z-10">Services</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <button 
-              onClick={scrollToPricing}
+            </button>
+            <button
+              onClick={() => handleNavigation(scrollToPricing)}
               className="relative text-[#0c1a39] text-xl tracking-wide font-normal  font-semibold group"
             >
               <span className="font-popins relative z-10">Pricing</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
-              onClick={scrollToPortfolio}
+              onClick={() => handleNavigation(scrollToPortfolio)}
               className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">Portfolio</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
-              onClick={scrollToFAQ}
+              onClick={() => handleNavigation(scrollToFAQ)}
               className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">FAQ</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#023157] group-hover:w-full transition-all duration-300"></span>
             </button>
             <button
-              onClick={scrollToMeteors}
+              onClick={() => handleNavigation(scrollToContact)}
               className="relative text-[#0c1a39] text-xl tracking-wide font-normal font-semibold group"
             >
               <span className="font-popins relative z-10">Contact</span>
@@ -176,7 +184,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               </Link>
               <button
                 onClick={() => {
-                  scrollToServices();
+                  handleNavigation(scrollToServices);
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
@@ -185,7 +193,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               </button>
               <button
                 onClick={() => {
-                  scrollToPricing();
+                  handleNavigation(scrollToPricing);
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
@@ -194,7 +202,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               </button>
               <button
                 onClick={() => {
-                  scrollToPortfolio();
+                  handleNavigation(scrollToPortfolio);
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
@@ -203,7 +211,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               </button>
               <button
                 onClick={() => {
-                  scrollToFAQ();
+                  handleNavigation(scrollToFAQ);
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
@@ -212,7 +220,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
               </button>
               <button
                 onClick={() => {
-                  scrollToMeteors();
+                  handleNavigation(scrollToContact);
                   setIsMenuOpen(false);
                 }}
                 className="block w-full text-left py-2 text-[#0c1a39] text-lg font-semibold hover:text-[#023157]"
