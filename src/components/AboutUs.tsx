@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { IconClock, IconUsers, IconBuildingStore, IconRocket, IconBulb, IconTools, IconHeartHandshake, IconChecks } from '@tabler/icons-react';
+import { LazyImage } from './ui/LazyImage';
 
 const AnimatedSection = ({ isRight = false }) => {
   return (
@@ -71,7 +72,7 @@ const AboutUs = () => {
                 </div>
                 <div className="relative w-full h-full flex items-center justify-end">
                   <div className="w-full lg:w-[150%] relative right-0">
-                    <img 
+                    <LazyImage 
                       src="/laptop.png" 
                       alt="Laptop Preview" 
                       className="w-full h-auto object-contain translate-x-[10%]"

@@ -8,6 +8,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import { Link } from "react-router-dom";
+import { LazyImage } from "./LazyImage";
 
 interface Product {
   title: string;
@@ -104,13 +105,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         className="block h-full w-full" 
         to={""}
       >
-        <div className="relative h-full w-full overflow-hidden ">
-          <img
+        <div className="relative h-full w-full overflow-hidden">
+          <LazyImage
             src={product.thumbnail}
             className="object-contain w-full h-full transition-transform duration-300 group-hover/product:scale-105"
             alt={product.title}
           />
-         
         </div>
       </Link>
     </motion.div>
