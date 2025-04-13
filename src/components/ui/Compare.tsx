@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { cn } from '../../lib/utils'
+
 interface CompareProps {
   firstImage: string
   secondImage: string
@@ -10,6 +11,7 @@ interface CompareProps {
   slideMode?: 'hover' | 'drag' | 'auto'
   autoSpeed?: number
 }
+
 export const Compare = ({
   firstImage,
   secondImage,
@@ -21,7 +23,7 @@ export const Compare = ({
 }: CompareProps) => {
   const [sliderPosition, setSliderPosition] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
-  const animationRef = useRef<number | null>(null)
+  const controls = useAnimation()
   
   const handleMouseMove = (event: React.MouseEvent) => {
     if (containerRef.current && slideMode === 'hover') {
@@ -32,35 +34,23 @@ export const Compare = ({
     }
   }
   
-  // Auto animation function
-  const animateSlider = () => {
-    setSliderPosition((prevPosition) => {
-      if (prevPosition >= 100) {
-        return 0
-      }
-      return prevPosition + 0.5
-    })
-    
-    animationRef.current = requestAnimationFrame(animateSlider)
-  }
-  
   useEffect(() => {
-    // Start auto animation if slideMode is 'auto'
     if (slideMode === 'auto') {
-      // Reset position to start
-      setSliderPosition(0)
-      
-      // Start the animation
-      animationRef.current = requestAnimationFrame(animateSlider)
+      controls.start({
+        clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)', 'inset(0 100% 0 0)'],
+        transition: {
+          duration: 6,
+          times: [0, 0.5, 1],
+          ease: "easeInOut",
+          repeat: Infinity,
+        }
+      });
     }
     
-    // Cleanup function
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
-    }
-  }, [slideMode])
+      controls.stop();
+    };
+  }, [slideMode, controls]);
   
   return (
     <div
@@ -78,13 +68,8 @@ export const Compare = ({
         </div>
         <motion.div
           className="absolute inset-0"
-          animate={{
-            clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
-          }}
-          transition={{
-            type: 'tween',
-            duration: 0.1,
-          }}
+          animate={controls}
+          initial={{ clipPath: 'inset(0 100% 0 0)' }}
         >
           <img
             src={secondImage}
@@ -92,14 +77,6 @@ export const Compare = ({
             className={cn('h-full w-full', secondImageClassname)}
           />
         </motion.div>
-        <div
-          className="absolute inset-y-0"
-          style={{
-            left: `${sliderPosition}%`,
-          }}
-        >
-          <div className="h-full w-0.5 bg-white" />
-        </div>
       </div>
     </div>
   )

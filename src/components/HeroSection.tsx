@@ -43,7 +43,8 @@ export const HeroSection = () => {
               firstImageClassName="object-contain object-top rounded-3xl"
               secondImageClassname="object-contain object-top rounded-3xl"
               className="h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] lg:h-[400px] lg:w-[400px] mx-auto"
-              slideMode="hover"
+              slideMode="auto"
+              autoSpeed={5000}
             />
           </div>
         </motion.div>

@@ -44,12 +44,15 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
   }, [lastScrollY]);
 
   const handleNavigation = (action: () => void) => {
+    setIsMenuOpen(false); // Close menu first
     if (location.pathname !== '/') {
       navigate('/');
-      // Use setTimeout to ensure the navigation happens before scrolling
-      setTimeout(action, 100);
+      // Increase timeout to ensure page loads
+      setTimeout(action, 500);
     } else {
-      action();
+      setTimeout(() => {
+        action();
+      }, 100);
     }
   };
 
@@ -136,7 +139,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-[#0c1a39] hover:bg-[#0c1a39]/10 focus:outline-none"
+            className="md:hidden p-2 rounded-md text-[#0c1a39]hover:bg-[#0c1a39]/10 focus:outline-none"
           >
             <svg
               className="h-6 w-6"
@@ -172,7 +175,7 @@ export function Header({ scrollToPricing, scrollToServices, scrollToContact, scr
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/90 backdrop-blur-md shadow-md"
+            className="md:hidden  shadow-md"
           >
             <div className="px-4 py-2 space-y-2">
               <Link
