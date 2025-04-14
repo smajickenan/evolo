@@ -39,7 +39,7 @@ export const Compare = ({
       controls.start({
         clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)', 'inset(0 100% 0 0)'],
         transition: {
-          duration: 6,
+          duration: 5,
           times: [0, 0.5, 1],
           ease: "easeInOut",
           repeat: Infinity,
