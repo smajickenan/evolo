@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Meteors } from "../components/ui/meteors";
+import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 const MeteorsSection = () => {
   const [formData, setFormData] = useState({
@@ -8,20 +10,50 @@ const MeteorsSection = () => {
     phone: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:eli.jerome2@gmail.com?subject=New Contact Form Submission&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    window.location.href = mailtoLink;
+    setIsLoading(true);
+    
+    try {
+      const result = await emailjs.send(
+        'service_012e6fe',
+        'template_8wzp2ma',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        'NbWDI2v8K_njAE7JS'
+      );
+
+      if (result.status === 200) {
+        alert('Message sent successfully!');
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   return (
@@ -132,9 +164,12 @@ const MeteorsSection = () => {
 
               <button
                 type="submit"
-                className="w-full px-3 sm:px-4 py-2 bg-white text-[#023157] font-semibold rounded-lg hover:bg-[#5b9ccc] transition-colors duration-300 text-sm sm:text-base"
+                disabled={isLoading}
+                className={`w-full px-3 sm:px-4 py-2 bg-white text-[#023157] font-semibold rounded-lg transition-colors duration-300 text-sm sm:text-base ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#5b9ccc]'
+                }`}
               >
-               Book Your Free Website Consultation
+                {isLoading ? 'Sending...' : 'Book Your Free Website Consultation'}
               </button>
             </form>
           </div>

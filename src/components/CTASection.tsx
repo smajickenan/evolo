@@ -127,8 +127,7 @@ const CTASection = () => {
             <span className="ml-1 sm:ml-2 text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl">50+ clients reviewed</span>
           </div>
           <p className="text-center text-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 md:mb-5 lg:mb-6">
-            "He assisted perfectly well in our project and delivered a great
-            result."
+            "They assisted perfectly with our project and delivered a great website"
           </p>
           <h3 className="font-libre text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-7xl text-white font-extrabold text-center mb-2 sm:mb-3 md:mb-4 max-w-5xl mx-auto leading-tight">
             It's time to convert your website into a money-making business asset.

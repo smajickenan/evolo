@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -36,27 +37,41 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
     setSubmitError('');
 
     try {
-      // Simulate API call - replace with your actual form submission logic
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // For demo purposes, we'll just show success
-      setSubmitSuccess(true);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          projectType: 'website',
-          budget: 'medium',
-          message: '',
-        });
-        onClose();
-      }, 3000);
+      const result = await emailjs.send(
+        'service_012e6fe',
+        'template_1xjiuyh',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          project_type: formData.projectType,
+          budget: formData.budget,
+          message: formData.message,
+        },
+        'NbWDI2v8K_njAE7JS'
+      );
+
+      if (result.status === 200) {
+        setSubmitSuccess(true);
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false);
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            projectType: 'website',
+            budget: 'medium',
+            message: '',
+          });
+          onClose();
+        }, 3000);
+      }
     } catch (error) {
+      console.error('Error sending email:', error);
       setSubmitError('There was an error submitting your form. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -64,7 +79,6 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Only close if clicking directly on the backdrop, not on the modal content
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -197,10 +211,10 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                       >
-                        <option value="small">$1,000 - $5,000</option>
-                        <option value="medium">$5,000 - $15,000</option>
-                        <option value="large">$15,000 - $30,000</option>
-                        <option value="enterprise">$30,000+</option>
+                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                        <option value="$5,000 - $15,000">$5,000 - $15,000</option>
+                        <option value="$15,000 - $30,000">$15,000 - $30,000</option>
+                        <option value="$30,000+">$30,000+</option>
                       </select>
                     </div>
                   </div>

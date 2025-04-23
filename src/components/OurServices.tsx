@@ -38,7 +38,7 @@ export const OurServices = () => {
           </div>
           <div className="w-full h-full px-6 md:px-12 lg:px-20 relative z-10 flex items-center">
             <div className="max-w-lg">
-              <h2 className="text-3xl ml-3 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              <h2 className="text-3xl ml-5 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
               COMPLETE DIGITAL PRESENCE
               <br />
               </h2>
@@ -116,12 +116,12 @@ export const OurServices = () => {
               <AnimatedSection isRight={true} />
             </div>
           </div>
-          <div className="w-full h-full px-4 md:px-12 lg:px-20 relative z-10 flex items-center">
+          <div className="w-full h-full px-6 md:px-12 lg:px-20 relative z-10 flex items-center">
             <div className="max-w-lg">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              <h2 className="text-3xl ml-5 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
                 TRANSPARENT PRICING
               </h2>
-              <p className="text-[#08183e] mt-6 text-lg md:text-xl">
+              <p className="text-[#08183e] ml-5 mt-6 text-lg md:text-xl">
               No hidden fees. We offer straightforward pricing from the start, so you know exactly what you're paying for — no surprises, just clarity. </p>
             </div>
           </div>
@@ -153,10 +153,10 @@ export const OurServices = () => {
           </div>
           <div className="w-full h-full px-4 md:px-12 lg:px-20 relative z-10 flex items-center">
             <div className="max-w-lg">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#08183e] font-libre">
+              <h2 className="text-3xl ml-5 md:text-4xl lg:text-5xl text-[#08183e] font-libre">
               GROWTH PARTNERSHIP
               </h2>
-              <p className="text-[#08183e] mt-2 text-lg md:text-xl">
+              <p className="text-[#08183e] ml-5 mt-2 text-lg md:text-xl">
               We're more than just developers — we're your long-term digital partners. As your business grows, we’ll help your online presence evolve to match your goals. </p>
             </div>
           </div>
