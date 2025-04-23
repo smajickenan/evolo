@@ -96,39 +96,39 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden"
+            className="relative w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden h-[95vh] sm:h-[65vh]"
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-white/80 z-10"
+              className="absolute top-2 right-2 text-white hover:text-white/80 z-10"
             >
-              <X size={24} />
+              <X size={20} />
             </button>
 
             {/* Header */}
-            <div className="bg-[#08183e] text-white p-6 sm:p-8">
-              <h2 className="text-2xl sm:text-3xl font-libre font-bold">Request Your Free Quote</h2>
-              <p className="mt-2 text-white/80">Fill out the form below and we'll get back to you within 24 hours.</p>
+            <div className="bg-[#08183e] text-white p-3">
+              <h2 className="text-xl font-libre font-bold">Request Your Free Quote</h2>
+              <p className="mt-1 text-sm text-white/80">Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
 
             {/* Form */}
-            <div className="p-6 sm:p-8">
+            <div className="p-3 sm:p-4 h-[calc(95vh-90px)] sm:h-[calc(65vh-90px)]">
               {submitSuccess ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <div className="text-center py-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Thank You!</h3>
-                  <p className="text-gray-600">Your request has been submitted successfully. We'll be in touch soon.</p>
+                  <h3 className="text-lg font-bold text-gray-800 mb-1">Thank You!</h3>
+                  <p className="text-sm text-gray-600">Your request has been submitted successfully. We'll be in touch soon.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-4 h-full sm:h-auto flex flex-col">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Full Name *</label>
                       <input
                         type="text"
                         id="name"
@@ -136,12 +136,12 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Email Address *</label>
                       <input
                         type="email"
                         id="email"
@@ -149,49 +149,49 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                         placeholder="john@example.com"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                      <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Phone Number</label>
                       <input
                         type="tel"
                         id="phone"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                         placeholder="+1 (555) 123-4567"
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                      <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Company Name</label>
                       <input
                         type="text"
                         id="company"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                         placeholder="Acme Inc."
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                     <div>
-                      <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">Project Type *</label>
+                      <label htmlFor="projectType" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Project Type *</label>
                       <select
                         id="projectType"
                         name="projectType"
                         value={formData.projectType}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                       >
                         <option value="website">Website Development</option>
                         <option value="ecommerce">E-commerce</option>
@@ -202,14 +202,14 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">Budget Range *</label>
+                      <label htmlFor="budget" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Budget Range *</label>
                       <select
                         id="budget"
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                        className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
                       >
                         <option value="$1,000 - $5,000">$1,000 - $5,000</option>
                         <option value="$5,000 - $15,000">$5,000 - $15,000</option>
@@ -219,29 +219,29 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
                     </div>
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details *</label>
+                  <div className="flex-grow sm:flex-grow-0">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">Project Details *</label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent"
+                      rows={2}
+                      className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#08183e] focus:border-transparent h-[calc(100%-2rem)] sm:h-32"
                       placeholder="Tell us about your project, goals, and any specific requirements..."
                     ></textarea>
                   </div>
 
                   {submitError && (
-                    <div className="text-red-500 text-sm">{submitError}</div>
+                    <div className="text-red-500 text-xs sm:text-sm">{submitError}</div>
                   )}
 
-                  <div className="pt-4">
+                  <div>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#08183e] text-white py-3 px-6 rounded-xl font-semibold hover:bg-[#023157] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full bg-[#08183e] text-white py-2 sm:py-3 px-4 sm:px-6 rounded-xl text-sm font-semibold hover:bg-[#023157] transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? 'Submitting...' : 'Submit Request'}
                     </button>
