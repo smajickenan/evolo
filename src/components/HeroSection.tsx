@@ -8,7 +8,7 @@ export const HeroSection = () => {
   const { openContactModal } = useModal();
   
   return (
-    <section className="relative min-h-[83vh] flex items-center">
+    <section className="relative min-h-[75vh] flex items-center mt-20">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

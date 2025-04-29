@@ -169,7 +169,7 @@ const MeteorsSection = () => {
                   isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#5b9ccc]'
                 }`}
               >
-                {isLoading ? 'Sending...' : 'Book Your Free Website Consultation'}
+                {isLoading ? 'Sending...' : 'Send'}
               </button>
             </form>
           </div>
