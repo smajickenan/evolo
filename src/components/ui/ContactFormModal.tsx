@@ -38,7 +38,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
 
     try {
       const result = await emailjs.send(
-        'service_012e6fe',
+        'service_pmn7chl',
         'template_1xjiuyh',
         {
           from_name: formData.name,

@@ -18,8 +18,8 @@ const MeteorsSection = () => {
     
     try {
       const result = await emailjs.send(
-        'service_012e6fe',
-        'template_8wzp2ma',
+        'service_pmn7chl',
+        'template_6nwoipq',
         {
           from_name: formData.name,
           from_email: formData.email,
